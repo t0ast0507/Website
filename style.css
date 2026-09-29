@@ -202,13 +202,13 @@ a:focus-visible {
 .hero {
   position: relative;
   overflow: hidden;
-  padding-top: 6rem;
-  padding-bottom: 5.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 4.5rem;
 }
 
 .hero-bg {
   position: absolute;
-  inset: -18% 0;
+  inset: 0;
   z-index: 0;
   pointer-events: none;
 }
@@ -229,6 +229,7 @@ a:focus-visible {
 .hero-content {
   position: relative;
   z-index: 1;
+  color: var(--fg);
 }
 
 .kicker {
@@ -814,19 +815,16 @@ figure:hover .reveal-media.is-visible {
 }
 
 .hero-enter {
-  animation: rise 0.7s ease both;
+  animation: rise 0.55s ease;
+}
+
+.hero-enter.is-visible {
+  opacity: 1;
+  transform: none;
 }
 
 .rule.hero-enter {
   animation-name: draw-rule;
-}
-
-.hero-enter.delay {
-  animation-delay: 0.1s;
-}
-
-.hero-enter.delay-2 {
-  animation-delay: 0.2s;
 }
 
 @keyframes rise {
@@ -1001,8 +999,12 @@ figure:hover .reveal-media.is-visible {
 
   .hero,
   .page {
-    padding-top: 3.25rem;
+    padding-top: 2.5rem;
     padding-bottom: 3.6rem;
+  }
+
+  .about {
+    margin-top: 1.5rem;
   }
 
   .contents a {

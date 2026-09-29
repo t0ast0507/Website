@@ -12,16 +12,23 @@ Static personal website for college applications. Dark, grayscale UI with full-c
 - `entrepreneurship.html` — scientific equipment business
 - `hobbies.html` — photography, origami, Legos, swimming
 - `honors.html` — awards
-- `community.html` — community service
+- `community.html` — community service, including NC State CUSA Scarlet Night
 - `contact.html` — email and phone
 
 Shared assets: `style.css`, `script.js`, `favicon.svg`, `images/`.
 
 ## GitHub Pages
 
-The custom domain is `jasoncao.com` (`CNAME` in the repo root). In the repository settings, enable Pages from the `main` branch, root folder, and confirm the custom domain.
+This repo deploys with the GitHub Actions workflow in `.github/workflows/pages.yml`. In the repository **Settings → Pages**, set the source to **GitHub Actions** and add the custom domain `jasoncao.com`.
 
-At your DNS provider, point the domain at GitHub Pages (apex `A` records to GitHub’s IPs, or `www` as a `CNAME` to `t0ast0507.github.io`).
+The custom domain file is `CNAME` in the repo root.
+
+At your DNS provider (this cannot be done from the repo):
+
+1. Apex `jasoncao.com` — `A` records to GitHub Pages: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (and the matching `AAAA` records if you want IPv6).
+2. `www.jasoncao.com` — `CNAME` to `t0ast0507.github.io`.
+
+Until DNS is set, GitHub will still serve the site at the Pages URL after the first successful workflow.
 
 ## Preview locally
 
