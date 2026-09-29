@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Hobbies — photography, origami, Legos, and competitive swimming."
+    />
+    <title>Hobbies — Jason Cao</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="wordmark" href="index.html">Jason Cao</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Menu
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="engineering.html">Engineering</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="entrepreneurship.html">Entrepreneurship</a></li>
+            <li><a href="hobbies.html" aria-current="page">Hobbies</a></li>
+            <li><a href="honors.html">Honors</a></li>
+            <li><a href="community.html">Community Service</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="page">
+      <div class="wrap">
+        <p class="kicker reveal">Off the clock</p>
+        <h1 class="page-title reveal">Hobbies</h1>
+        <span class="rule reveal"></span>
+        <p class="intro reveal">
+          Photography, folding, building, and swimming.
+        </p>
+
+        <div class="hobbies">
+          <article class="reveal">
+            <h2>Photography</h2>
+            <p>
+              Drone and travel photography. Click a frame to enlarge.
+            </p>
+            <div class="gallery">
+              <button
+                type="button"
+                class="gallery-item"
+                data-caption="Drone panorama of a neighborhood"
+                aria-label="Enlarge drone panorama of a neighborhood"
+              >
+                <img
+                  class="reveal-media"
+                  src="images/photo-aerial-pano.jpg"
+                  alt="Aerial drone panorama of apartment buildings and a neighborhood."
+                  width="2000"
+                  height="1000"
+                />
+              </button>
+              <button
+                type="button"
+                class="gallery-item"
+                data-caption="Waterfront view of a lit dome at dusk"
+                aria-label="Enlarge waterfront view of a lit dome at dusk"
+              >
+                <img
+                  class="reveal-media"
+                  src="images/photo-epcot-night.jpg"
+                  alt="Waterfront view of a lit dome structure at dusk, with a lighthouse and hotel lights reflecting on the water."
+                  width="2000"
+                  height="1500"
+                />
+              </button>
+              <button
+                type="button"
+                class="gallery-item"
+                data-caption="Hollywood sign at golden hour"
+                aria-label="Enlarge Hollywood sign at golden hour"
+              >
+                <img
+                  class="reveal-media"
+                  src="images/photo-hollywood-sign.jpg"
+                  alt="The Hollywood sign on a hillside at golden hour."
+                  width="2000"
+                  height="1500"
+                />
+              </button>
+              <button
+                type="button"
+                class="gallery-item"
+                data-caption="Oak trees with Spanish moss"
+                aria-label="Enlarge oak trees with Spanish moss"
+              >
+                <img
+                  class="reveal-media"
+                  src="images/photo-savannah-oaks.jpg"
+                  alt="Large oak trees draped in Spanish moss."
+                  width="2000"
+                  height="1500"
+                />
+              </button>
+            </div>
+          </article>
+          <article class="reveal">
+            <h2>Origami</h2>
+            <p>
+              Both three-dimensional models and two-dimensional folding —
+              patience, structure, and a finished object from a single sheet.
+            </p>
+          </article>
+          <article class="reveal">
+            <h2>Legos</h2>
+            <p>
+              Mostly the 1:8 scale supercar sets that come out roughly every
+              two years — long builds, mechanical detail, and display pieces
+              when they’re done.
+            </p>
+          </article>
+          <article id="athletics" class="reveal">
+            <h2>Athletics</h2>
+            <p class="meta">Competitive swimming · Varsity team captain</p>
+            <p>
+              More than ten years in the pool. Away from the clock, swimming is
+              also how I think and reset. Personal bests in short course yards
+              (SCY) and long course meters (LCM).
+            </p>
+            <div class="callouts">
+              <p class="callout">
+                <span class="label">Sprint</span>
+                <strong>27.58</strong>
+                <span>50 Free · SCY</span>
+              </p>
+              <p class="callout">
+                <span class="label">Distance</span>
+                <strong>23:36.36</strong>
+                <span>1650 Free · SCY</span>
+              </p>
+            </div>
+            <div
+              class="table-wrap"
+              role="region"
+              aria-labelledby="times-caption"
+              tabindex="0"
+            >
+              <table>
+                <caption id="times-caption">Personal-best times</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Event</th>
+                    <th scope="col">SCY</th>
+                    <th scope="col">LCM</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="is-mark">
+                    <th scope="row">50 Free</th>
+                    <td>27.58</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">100 Free</th>
+                    <td>1:01.73</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">200 Free</th>
+                    <td>—</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">400 Free</th>
+                    <td>—</td>
+                    <td>5:54.08</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">500 Free</th>
+                    <td>6:41.63</td>
+                    <td>—</td>
+                  </tr>
+                  <tr class="is-mark">
+                    <th scope="row">1650 Free</th>
+                    <td>23:36.36</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">100 Back</th>
+                    <td>—</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">200 Back</th>
+                    <td>—</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">100 Breast</th>
+                    <td>—</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">200 Breast</th>
+                    <td>—</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">100 Fly</th>
+                    <td>—</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">200 Fly</th>
+                    <td>—</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">200 IM</th>
+                    <td>—</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">400 IM</th>
+                    <td>—</td>
+                    <td>—</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <dialog class="lightbox" aria-label="Photograph">
+      <img alt="" />
+      <div class="lightbox-caption">
+        <span></span>
+        <button class="lightbox-close" type="button" value="close">Close</button>
+      </div>
+    </dialog>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>Jason Cao · Personal site</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

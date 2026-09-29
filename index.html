@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Jason Cao — high school senior, engineer, builder, and swimmer."
+      content="Jason Cao — high school senior, engineer, builder, and swimmer applying to college for engineering."
     />
     <title>Jason Cao</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -22,13 +22,23 @@
     <header class="site-header">
       <div class="wrap header-inner">
         <a class="wordmark" href="index.html">Jason Cao</a>
-        <nav aria-label="Primary">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Menu
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
           <ul>
             <li><a href="index.html" aria-current="page">Home</a></li>
             <li><a href="engineering.html">Engineering</a></li>
-            <li><a href="athletics.html">Athletics</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="entrepreneurship.html">Entrepreneurship</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
             <li><a href="honors.html">Honors</a></li>
-            <li><a href="service.html">Service</a></li>
+            <li><a href="community.html">Community Service</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -38,27 +48,41 @@
     <main id="main">
       <section class="hero">
         <div class="wrap">
-          <p class="kicker hero-enter">College applications · Class of 2027</p>
+          <p class="kicker hero-enter">Class of 2027</p>
           <h1 class="hero-enter delay">Jason Cao</h1>
           <span class="rule hero-enter delay"></span>
-          <p class="tagline hero-enter delay">Engineer, builder, and swimmer.</p>
+          <p class="tagline hero-enter delay">
+            Engineer, builder, and swimmer.
+          </p>
           <p class="lede hero-enter delay-2">
             I’m a high school senior applying to college to study engineering.
-            I’m drawn to electrical and computer engineering, mechanical
-            engineering, and chemical engineering — especially where they meet
-            aerospace, robotics, and computational work.
+            I’m interested in electrical and computer engineering, mechanical
+            engineering, and chemical engineering — especially aerospace,
+            robotics, and computational work.
           </p>
           <ul class="contents reveal">
             <li>
               <a href="engineering.html">
                 <strong>Engineering</strong>
-                <span>Robots, research, and making things</span>
+                <span>FRC and Conrad Challenge</span>
               </a>
             </li>
             <li>
-              <a href="athletics.html">
-                <strong>Athletics</strong>
-                <span>Varsity swimming</span>
+              <a href="research.html">
+                <strong>Research</strong>
+                <span>Materials and flight</span>
+              </a>
+            </li>
+            <li>
+              <a href="entrepreneurship.html">
+                <strong>Entrepreneurship</strong>
+                <span>Scientific equipment</span>
+              </a>
+            </li>
+            <li>
+              <a href="hobbies.html">
+                <strong>Hobbies</strong>
+                <span>Photography, origami, swimming</span>
               </a>
             </li>
             <li>
@@ -68,15 +92,15 @@
               </a>
             </li>
             <li>
-              <a href="service.html">
-                <strong>Service</strong>
-                <span>Coaching, volunteering, community</span>
+              <a href="community.html">
+                <strong>Community Service</strong>
+                <span>Coaching, volunteering, performance</span>
               </a>
             </li>
             <li>
               <a href="contact.html">
                 <strong>Contact</strong>
-                <span>Email</span>
+                <span>Email and phone</span>
               </a>
             </li>
           </ul>
