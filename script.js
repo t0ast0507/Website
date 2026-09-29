@@ -79,7 +79,8 @@
     { threshold: 0.12, rootMargin: "0px 0px -5% 0px" }
   );
 
-  items.forEach(function (el) {
+  items.forEach(function (el, i) {
+    el.style.setProperty("--stagger", String(Math.min(i, 10)));
     io.observe(el);
   });
 })();
