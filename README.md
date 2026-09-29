@@ -1,5 +1,7 @@
 # Jason Cao — Personal Site
 
+Live site: [https://jasoncao.com](https://jasoncao.com)
+
 Static personal website for college applications. Dark, grayscale UI with full-color photographs, multiple pages, built to host on GitHub Pages. No framework and no build step.
 
 ## Pages
@@ -15,6 +17,12 @@ Static personal website for college applications. Dark, grayscale UI with full-c
 
 Shared assets: `style.css`, `script.js`, `favicon.svg`, `images/`.
 
+## GitHub Pages
+
+The custom domain is `jasoncao.com` (`CNAME` in the repo root). In the repository settings, enable Pages from the `main` branch, root folder, and confirm the custom domain.
+
+At your DNS provider, point the domain at GitHub Pages (apex `A` records to GitHub’s IPs, or `www` as a `CNAME` to `t0ast0507.github.io`).
+
 ## Preview locally
 
 From this folder:
@@ -23,8 +31,4 @@ From this folder:
 python3 -m http.server 8000
 ```
 
-Then open [http://localhost:8000](http://localhost:8000).
-
-## GitHub Pages
-
-Enable Pages from the `main` branch, root folder.
+Then open http://localhost:8000 on your machine. That is only for local preview; the public site is [https://jasoncao.com](https://jasoncao.com).
