@@ -43,6 +43,11 @@
     if (document.readyState === "complete") {
       window.setTimeout(endLoad, 280);
     }
+    document.querySelectorAll(".hero-enter").forEach(function (el) {
+      window.setTimeout(function () {
+        show(el);
+      }, 600);
+    });
   }
 
   if (toggle && nav) {
@@ -164,11 +169,21 @@
         }
       });
     },
-    { threshold: 0.12, rootMargin: "0px 0px -5% 0px" }
+    { threshold: 0.01, rootMargin: "80px 0px 80px 0px" }
   );
 
   items.forEach(function (el, i) {
     el.style.setProperty("--stagger", String(Math.min(i, 10)));
     io.observe(el);
   });
+
+  window.setTimeout(function () {
+    items.forEach(function (el) {
+      if (el.classList.contains("is-visible")) return;
+      var box = el.getBoundingClientRect();
+      if (box.bottom < -40 || box.top > window.innerHeight + 40) return;
+      show(el);
+      io.unobserve(el);
+    });
+  }, 250);
 })();
