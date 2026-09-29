@@ -21,7 +21,31 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap header-inner">
-        <a class="wordmark" href="index.html">Jason Cao</a>
+        <a class="wordmark" href="index.html" aria-label="Jason Cao home">
+          <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect
+              class="mark-frame"
+              x="1.5"
+              y="1.5"
+              width="29"
+              height="29"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+            />
+            <text
+              x="16"
+              y="21.5"
+              text-anchor="middle"
+              font-size="13"
+              font-family="Georgia, 'Times New Roman', serif"
+              fill="currentColor"
+            >
+              JC
+            </text>
+          </svg>
+          <span class="wordmark-text">Jason Cao</span>
+        </a>
         <button
           class="nav-toggle"
           type="button"
@@ -47,7 +71,10 @@
 
     <main id="main">
       <section class="hero">
-        <div class="wrap">
+        <div class="hero-bg" aria-hidden="true">
+          <div class="hero-bg-shift" data-parallax="0.2"></div>
+        </div>
+        <div class="wrap hero-content">
           <p class="kicker hero-enter">Class of 2027</p>
           <h1 class="hero-enter delay">Jason Cao</h1>
           <span class="rule hero-enter delay"></span>
