@@ -51,11 +51,12 @@ a {
   color: inherit;
   text-underline-offset: 0.18em;
   text-decoration-thickness: 1px;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
 }
 
 a:hover {
-  opacity: 0.7;
+  opacity: 1;
+  filter: brightness(1.12);
 }
 
 a:focus-visible {
@@ -98,37 +99,71 @@ a:focus-visible {
 
 .header-inner {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.7rem;
-  padding-block: 0.95rem 0.85rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding-block: 0.85rem;
 }
 
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   flex-shrink: 0;
   font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 500;
   letter-spacing: -0.02em;
   text-decoration: none;
+  transition: letter-spacing 0.28s ease, opacity 0.2s ease, filter 0.2s ease;
 }
 
 .wordmark:hover {
   opacity: 1;
+  filter: brightness(1.12);
+}
+
+.wordmark:hover .wordmark-text {
+  letter-spacing: 0.03em;
+}
+
+.wordmark-text {
+  transition: letter-spacing 0.28s ease;
+}
+
+.mark {
+  width: 1.7rem;
+  height: 1.7rem;
+  display: block;
+  overflow: visible;
+}
+
+.mark-frame {
+  stroke-dasharray: 116;
+  stroke-dashoffset: 116;
+  animation: draw-mark 0.85s ease forwards;
 }
 
 .nav-toggle {
   display: none;
+  transition: letter-spacing 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-toggle.is-open {
+  letter-spacing: 0.18em;
 }
 
 .site-nav {
-  width: 100%;
+  width: auto;
+  margin-left: auto;
+  max-width: min(52rem, calc(100% - 9rem));
 }
 
 .site-nav ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: flex-end;
   gap: 0.4rem 1.05rem;
   margin: 0;
   padding: 0;
@@ -136,16 +171,22 @@ a:focus-visible {
 }
 
 .site-nav a {
+  display: inline-block;
   font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
   opacity: 0.68;
+  transition: opacity 0.2s ease, transform 0.2s ease, filter 0.2s ease,
+    text-shadow 0.2s ease;
 }
 
 .site-nav a:hover {
   opacity: 1;
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+  text-shadow: 0 8px 18px rgba(240, 240, 240, 0.12);
 }
 
 .site-nav a[aria-current="page"] {
@@ -159,8 +200,35 @@ a:focus-visible {
 }
 
 .hero {
+  position: relative;
+  overflow: hidden;
   padding-top: 6rem;
   padding-bottom: 5.5rem;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: -18% 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-bg-shift {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      rgba(240, 240, 240, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(240, 240, 240, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  animation: grid-drift 32s linear infinite;
+  will-change: transform, background-position;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 
 .kicker {
@@ -193,6 +261,45 @@ h1,
   margin: 1.35rem 0 0;
   background: var(--fg);
   opacity: 0.45;
+  transform-origin: left;
+}
+
+.home-photos a:hover {
+  opacity: 1;
+  filter: none;
+}
+
+.home-photos a:hover figure {
+  border-color: var(--fg);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+}
+
+.home-photos a:hover img,
+.gallery-item:hover img,
+figure:hover img {
+  transform: scale(1.04);
+}
+
+.callout {
+  transition: transform 0.28s ease, border-color 0.28s ease;
+}
+
+.callout:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+}
+
+.contents li {
+  transition: transform 0.28s ease;
+}
+
+.contents a:hover {
+  opacity: 1;
+}
+
+.contents li:hover {
+  transform: translateX(4px);
 }
 
 .tagline {
@@ -268,6 +375,7 @@ h1,
 
 .contents li {
   border-bottom: 1px solid var(--line);
+  transition: transform 0.28s ease;
 }
 
 .contents a {
@@ -356,9 +464,11 @@ h1,
 
 figure {
   margin: 0;
+  overflow: hidden;
   background: var(--bg-elev);
   border: 1px solid var(--line-strong);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 figure img {
@@ -366,6 +476,7 @@ figure img {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   filter: none;
+  transition: transform 0.45s ease;
 }
 
 figcaption {
@@ -387,6 +498,7 @@ figcaption {
   padding: 1.15rem 1.2rem 1.25rem;
   border: 1px solid var(--line);
   background: var(--bg-elev);
+  transition: transform 0.28s ease, border-color 0.28s ease;
 }
 
 .callout .label {
@@ -464,6 +576,7 @@ figcaption {
 .gallery-item {
   display: block;
   width: 100%;
+  overflow: hidden;
   padding: 0;
   border: 1px solid var(--line-strong);
   background: var(--bg-elev);
@@ -472,12 +585,20 @@ figcaption {
   font: inherit;
   cursor: zoom-in;
   text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .gallery-item:hover,
 .gallery-item:focus-visible {
   opacity: 1;
+  filter: none;
   border-color: var(--fg);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+}
+
+.gallery-item.is-hit {
+  transform: scale(0.98);
 }
 
 .gallery-item img {
@@ -485,6 +606,7 @@ figcaption {
   aspect-ratio: 3 / 2;
   object-fit: cover;
   filter: none;
+  transition: transform 0.45s ease;
 }
 
 .lightbox {
@@ -497,10 +619,12 @@ figcaption {
   color: var(--fg);
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.7);
   z-index: 80;
+  animation: lightbox-in 0.28s ease;
 }
 
 .lightbox::backdrop {
   background: rgba(8, 8, 8, 0.82);
+  animation: fade-in 0.28s ease;
 }
 
 .lightbox img {
@@ -615,15 +739,19 @@ tbody tr.is-mark td {
 }
 
 .mail {
+  display: inline-block;
   font-family: var(--font-serif);
   font-size: clamp(1.3rem, 3vw, 1.85rem);
   text-decoration: none;
   border-bottom: 1px solid var(--line-strong);
   padding-bottom: 0.12rem;
+  transition: transform 0.25s ease, border-color 0.2s ease, filter 0.2s ease;
 }
 
 .mail:hover {
   opacity: 1;
+  filter: brightness(1.12);
+  transform: translateY(-2px);
   border-bottom-color: var(--fg);
 }
 
@@ -650,6 +778,7 @@ tbody tr.is-mark td {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.65s ease, transform 0.65s ease;
+  transition-delay: calc(var(--stagger, 0) * 0.07s);
 }
 
 .js .reveal.is-visible {
@@ -657,10 +786,20 @@ tbody tr.is-mark td {
   transform: none;
 }
 
+.js .rule.reveal {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.js .rule.reveal.is-visible {
+  transform: scaleX(1);
+}
+
 .js .reveal-media {
   opacity: 0;
   transform: scale(0.985);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: calc(var(--stagger, 0) * 0.07s);
 }
 
 .js .reveal-media.is-visible {
@@ -668,8 +807,18 @@ tbody tr.is-mark td {
   transform: scale(1);
 }
 
+.home-photos a:hover .reveal-media.is-visible,
+.gallery-item:hover .reveal-media.is-visible,
+figure:hover .reveal-media.is-visible {
+  transform: scale(1.035);
+}
+
 .hero-enter {
   animation: rise 0.7s ease both;
+}
+
+.rule.hero-enter {
+  animation-name: draw-rule;
 }
 
 .hero-enter.delay {
@@ -689,6 +838,108 @@ tbody tr.is-mark td {
     opacity: 1;
     transform: none;
   }
+}
+
+@keyframes draw-rule {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 0.45;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes draw-mark {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes grid-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 44px 44px;
+  }
+}
+
+@keyframes load-run {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  80% {
+    width: 86%;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.load-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  height: 2px;
+  width: 0;
+  background: var(--fg);
+  pointer-events: none;
+}
+
+.load-bar.is-running {
+  animation: load-run 0.65s ease forwards;
+}
+
+.load-spin {
+  position: fixed;
+  top: 0.45rem;
+  left: 50%;
+  z-index: 90;
+  width: 13px;
+  height: 13px;
+  margin-left: -6.5px;
+  border: 1px solid var(--line-strong);
+  border-top-color: var(--fg);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.load-spin.is-on {
+  opacity: 1;
+  animation: spin 0.65s linear infinite;
 }
 
 @media (max-width: 720px) {
@@ -716,17 +967,24 @@ tbody tr.is-mark td {
   }
 
   .js .nav-toggle:hover {
-    opacity: 0.7;
+    opacity: 1;
+    filter: brightness(1.15);
   }
 
   .js .site-nav {
     display: none;
     width: 100%;
+    max-width: none;
+    margin-left: 0;
     padding-bottom: 0.35rem;
   }
 
   .js .site-nav.is-open {
     display: block;
+  }
+
+  .js .site-nav.is-open ul {
+    justify-content: flex-start;
   }
 }
 
@@ -782,8 +1040,16 @@ tbody tr.is-mark td {
 
   .js .reveal,
   .js .reveal-media,
-  .hero-enter {
+  .hero-enter,
+  .mark-frame {
     opacity: 1 !important;
     transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+
+  .hero-bg-shift,
+  .load-bar,
+  .load-spin {
+    display: none;
   }
 }
