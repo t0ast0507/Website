@@ -7,13 +7,12 @@ Static personal website for college applications. Dark, grayscale UI with full-c
 ## Pages
 
 - `index.html` — home
-- `engineering.html` — FRC and Conrad Challenge
-- `research.html` — 2D semiconductors and independent paper
-- `entrepreneurship.html` — scientific equipment business
-- `hobbies.html` — photography, origami, Legos, swimming
-- `honors.html` — awards
-- `community.html` — community service, including NC State CUSA Scarlet Night
+- `engineering.html` — engineering, research, and the eBay business, with honors as inline badges
+- `athletics.html` — competitive swimming
+- `beyond.html` — community service, origami, Legos, and photography
 - `contact.html` — email and phone
+
+Older URLs (`research.html`, `entrepreneurship.html`, `honors.html`, `hobbies.html`, `community.html`) redirect to the merged pages.
 
 Shared assets: `style.css`, `script.js`, `favicon.svg`, `images/`.
 

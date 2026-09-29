@@ -174,9 +174,10 @@ a:focus-visible {
   display: inline-block;
   font-size: 0.68rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
+  white-space: nowrap;
   opacity: 0.68;
   transition: opacity 0.2s ease, transform 0.2s ease, filter 0.2s ease,
     text-shadow 0.2s ease;
@@ -313,6 +314,11 @@ figure:hover img {
   line-height: 1.4;
 }
 
+.hero-copy {
+  max-width: 42rem;
+  margin: 1.35rem 0 0;
+}
+
 .about {
   max-width: 42rem;
   margin-top: 2.25rem;
@@ -414,6 +420,18 @@ figure:hover img {
   margin-top: 3.15rem;
 }
 
+.entry-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.6rem;
+  margin-bottom: 0.45rem;
+}
+
+.entry .gallery {
+  margin-top: 1rem;
+}
+
 .entry h2 {
   margin: 0;
   font-family: var(--font-serif);
@@ -421,6 +439,37 @@ figure:hover img {
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.25;
+}
+
+.recognition {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+  margin-top: 1.6rem;
+  max-width: 46rem;
+}
+
+.badge-row,
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.badge {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0.14rem 0.48rem;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-elev);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 1.45;
 }
 
 .entry h2 cite {
@@ -1003,8 +1052,9 @@ figure:hover .reveal-media.is-visible {
     padding-bottom: 3.6rem;
   }
 
-  .about {
-    margin-top: 1.5rem;
+  .about,
+  .hero-copy {
+    margin-top: 1.25rem;
   }
 
   .contents a {
