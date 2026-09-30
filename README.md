@@ -2,15 +2,17 @@
 
 Live site: [https://jasoncao.com](https://jasoncao.com)
 
-Static personal website for college applications. Dark, grayscale UI with full-color photographs, multiple pages, built to host on GitHub Pages. No framework and no build step.
+Static personal website for college applications. Warm neutral pages, one deep-green accent, full-color photographs, built to host on GitHub Pages. No framework and no build step.
 
 ## Pages
 
 - `index.html` — home
-- `engineering.html` — engineering, research, and the eBay business, with honors as inline badges
+- `engineering.html` — engineering, research, the eBay business, and an awards list
 - `athletics.html` — competitive swimming
 - `beyond.html` — community service, origami, Legos, and photography
-- `contact.html` — email and phone
+- `looking-forward.html` — what the engineering work is for
+
+Email and phone are in the footer of every page. `contact.html` redirects there.
 
 Older URLs (`research.html`, `entrepreneurship.html`, `honors.html`, `hobbies.html`, `community.html`) redirect to the merged pages.
 
