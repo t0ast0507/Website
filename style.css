@@ -419,6 +419,18 @@ figure:hover img {
   margin: 1.75rem 0 0;
 }
 
+.intro p {
+  margin: 0;
+}
+
+.intro p + p {
+  margin-top: 0.85rem;
+}
+
+.times-lead {
+  margin: 1.75rem 0 0;
+}
+
 .intro {
   color: var(--muted);
 }
@@ -568,6 +580,10 @@ figure:hover img {
 
 .photos.lead {
   margin-top: 2rem;
+}
+
+.photos.end {
+  margin-top: 2.5rem;
 }
 
 figure {
