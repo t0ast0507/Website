@@ -435,6 +435,10 @@ figure:hover img {
   color: var(--muted);
 }
 
+.times-lead {
+  margin: 1.75rem 0 0;
+}
+
 .contents {
   max-width: 36rem;
   margin: 3.75rem 0 0;
@@ -578,6 +582,8 @@ figure:hover img {
   max-width: 28rem;
 }
 
+.photos.end {
+  margin-top: 2.5rem;
 .photos.lead {
   margin-top: 2rem;
 }
