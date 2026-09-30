@@ -604,8 +604,14 @@ figure:hover img {
   max-width: 28rem;
 }
 
-.photos.end {
-  margin-top: 2.5rem;
+.photos.group {
+  max-width: 36rem;
+}
+
+.photos.group img {
+  aspect-ratio: 3 / 2;
+}
+
 .photos.lead {
   margin-top: 2rem;
 }
