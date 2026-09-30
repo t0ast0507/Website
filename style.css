@@ -344,9 +344,31 @@ figure:hover img {
   line-height: 1.4;
 }
 
-.hero-copy {
+.hero-points {
   max-width: 42rem;
   margin: 1.35rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-points li {
+  position: relative;
+  margin: 0 0 0.7rem;
+  padding-left: 0.95rem;
+}
+
+.hero-points li:last-child {
+  margin-bottom: 0;
+}
+
+.hero-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.4rem;
+  height: 1px;
+  background: var(--accent);
 }
 
 .forward {
@@ -1134,7 +1156,7 @@ figure:hover .reveal-media.is-visible {
   }
 
   .about,
-  .hero-copy {
+  .hero-points {
     margin-top: 1.25rem;
   }
 
